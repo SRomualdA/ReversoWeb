@@ -48,24 +48,24 @@ jobs:
         with:
           name: reverso
 
-  docker-build-image-push:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: unbuntu-latest
-    needs:
-      -projet-build
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set Up QEMU
-        uses: docker/setup-qemu-action@v3
-
-      - name: Set Up Docker Build
-        uses: docker/login-action@v3
-
-      # mise en relation du docker hub
-      - name: Connect to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username : ${{ secrets.DOCKERHUB_USER }}
-          password : ${{ secrets.DOCKERHUB_PASSWORD }}
+#  docker-build-image-push:
+#    if: ${{ github.ref == 'refs/heads/main' }}
+#    runs-on: unbuntu-latest
+#    needs:
+#      -projet-build
+#    steps:
+#      - uses: actions/checkout@v4
+#
+#      - name: Set Up QEMU
+#        uses: docker/setup-qemu-action@v3
+#
+#      - name: Set Up Docker Build
+#        uses: docker/login-action@v3
+#
+#      # mise en relation du docker hub
+#      - name: Connect to Docker Hub
+#        uses: docker/login-action@v3
+#        with:
+#          username : ${{ secrets.DOCKERHUB_USER }}
+#          password : ${{ secrets.DOCKERHUB_PASSWORD }}
 
